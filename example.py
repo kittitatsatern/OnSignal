@@ -1,8 +1,8 @@
-from OnSignal import Signal
+from SimpleSignal import Signal
 
 # Define a callback function
 def callback(message):
-    print(f"Received message: {message}")
+    print(f"message: {message}")
 
 # Create an instance of Signal
 signal = Signal()
@@ -11,7 +11,7 @@ signal = Signal()
 signal.connect(callback)
 
 # Fire the signal
-signal.fire("Hello, world!")
+signal.fire("Hello World.")
 
 # Disconnect the callback
 signal.disconnect()
