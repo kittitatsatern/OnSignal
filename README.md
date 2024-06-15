@@ -1,5 +1,5 @@
 # **OnSignal**
-A simple way to handle callbacks in Python, allowing you to connect function (callback) and trigger them with when necessary.
+A simple way to handle callbacks in Python, allow you to connect function (callback) and trigger them with when necessary.
 
 ## **How to Use**
 Getting Started
@@ -22,5 +22,5 @@ signal_instance.connect(callback_function)
 Firing the Signal
 ```python
 # Fire the signal, triggering the connected callback
-signal_instance.fire("Hello", "World")
+signal_instance.fire()
 ```
