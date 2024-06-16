@@ -16,6 +16,9 @@ class Connection:
                     prev = prev.next
                 if prev:
                     prev.next = self.next
+            self.signal = None
+            self.callback = None
+            self.next = None
 
     def __str__(self):
         return "Connection"

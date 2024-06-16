@@ -17,6 +17,8 @@ class Connection:
                 self.prev.next = self.next
             if self.next:
                 self.next.prev = self.prev
+            self.signal = None
+            self.callback = None
             self.prev = None
             self.next = None
 
