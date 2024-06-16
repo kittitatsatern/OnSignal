@@ -1,5 +1,5 @@
 # **Simple Signal**
-A simple way to handle callbacks in Python, allow you to connect function (callback) and trigger them with when necessary.
+A simple way to handle callback in Python, allow you to connect function (callback) and trigger them with when necessary.
 
 ## **How to Use**
 Getting Started
