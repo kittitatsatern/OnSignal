@@ -1,5 +1,5 @@
 import time
-from SimpleSignal import Signal
+from src.SimpleSignal import Signal
 
 class Door:
     def __init__(self) -> None:
@@ -12,10 +12,10 @@ class Door:
         self.closed.fire()
 
 def on_door_closing():
-    print("Closing")
+    print("closing the door")
 
 def on_door_closed():
-    print("Closed")
+    print("closed")
 
 new_door = Door()
 

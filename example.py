@@ -1,4 +1,4 @@
-from SimpleSignal import Signal
+from src.SimpleSignal import Signal
 
 # Define a callback function
 def callback(message):
