@@ -1,10 +1,10 @@
 # **Simple Signal**
-A simple way to handle callback in Python, allow you to connect function (callback) and trigger them with when necessary.
+I made this cool signal system in Python. It's totally thread-safe and uses weak references to handle connections and callbacks really well. You can connect things, disconnect them, pause callbacks, and start them again whenever you want.
 
 ## **How to Use**
 Getting Started
 ```python
-from SimpleSignal import Signal
+from simple_signal import Signal
 
 # Create an instance of Signal
 signal_instance = Signal()

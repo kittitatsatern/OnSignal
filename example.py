@@ -1,26 +1,26 @@
 from src.SimpleSignal import Signal
 
-# Define a callback function
-def callback(message):
-    print(f"message: {message}")
+class Button:
+    def __init__(self):
+        self.clicked = Signal()
 
-def callback2(message):
-    print(f"message2: {message}")
+    def click(self):
+        self.clicked.fire()
 
-# Create an instance of Signal
-signal = Signal()
+class Label:
+    def __init__(self):
+        self.text = ""
 
-# Connect the callback function
-connection = signal.connect(callback)
-signal.connect(callback2)
+    def update_text(self, new_text):
+        self.text = new_text
+        print(f"Label updated to: {self.text}")
 
-connection.disconnect()
+# Create a button and a label
+button = Button()
+label = Label()
 
-# Fire the signal
-signal.fire("Hello World.")
+# Connect the button click signal to the label update method
+button.clicked.connect(lambda: label.update_text("Button clicked!"))
 
-# Disconnect the callback
-signal.disconnect_all()
-
-# Trying to fire again won't do anything
-signal.fire("This won't be received.")
+# Simulate a button click
+button.click()
