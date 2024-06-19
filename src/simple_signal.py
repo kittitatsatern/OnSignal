@@ -85,7 +85,7 @@ class Signal:
     
     """ Fires the signal once and then disconnects all callbacks """
     def once(self, *args):
-        self.emit(*args)
+        self.fire(*args)
         self.disconnect_all()
 
     """ Pauses all connections, preventing all callbacks from being called """
