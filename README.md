@@ -2,25 +2,30 @@
 I made this cool signal system in Python. It's totally thread-safe and uses weak references to handle connections and callbacks really well. You can connect things, disconnect them, pause callbacks, and start them again whenever you want.
 
 ## **How to Use**
-Getting Started
+Example
 ```python
-from simple_signal import Signal
+class Button:
+    def __init__(self):
+        self.clicked = Signal()
 
-# Create an instance of Signal
-signal_instance = Signal()
-```
+    def click(self):
+        self.clicked.fire()
 
-Connecting a Callback
-```python
-def callback_function():
-    print("Hello World.")
+class Label:
+    def __init__(self):
+        self.text = ""
 
-# Connect the callback function to the signal
-signal_instance.connect(callback_function)
-```
+    def update_text(self, new_text):
+        self.text = new_text
+        print(f"Label updated to: {self.text}")
 
-Firing the Signal
-```python
-# Fire the signal, triggering the connected callback
-signal_instance.fire()
+# Create a button and a label
+button = Button()
+label = Label()
+
+# Connect the button click signal to the label update method
+button.clicked.connect(lambda: label.update_text("Button clicked!"))
+
+# Simulate a button click
+button.click()
 ```
