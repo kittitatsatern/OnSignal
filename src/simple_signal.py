@@ -3,17 +3,17 @@ import threading
 
 class Connection:
     def __init__(self, signal, callback) -> None:
-        self.signal = weakref.ref(signal)
+        self.signal = weakref.ref(signal)()
         self.connected = True
         self.callback = callback
         self.next = None
         self.lock = threading.RLock()
 
     """ Disconnects the callback from the signal """
-    def disconnect(self):
+    def disconnect(self) -> bool:
         with self.lock:
             self.connected = False
-            signal = self.signal()
+            signal = self.signal
             if signal:
                 with signal.lock:
                     if signal.head == self:
@@ -69,7 +69,7 @@ class Signal:
         return wrapper_connection
     
     """ Disconnects all callbacks from the signal """
-    def disconnect_all(self):
+    def disconnect_all(self) -> bool:
         with self.lock:
             self.head = None
             return True
