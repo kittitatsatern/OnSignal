@@ -1,4 +1,4 @@
-from src.SimpleSignal import Signal
+from src.simple_signal import Signal
 
 class Button:
     def __init__(self):
