@@ -1,6 +1,3 @@
-# **Simple Signal**
-I made this cool signal system in Python. It's totally thread-safe and uses weak references to handle connections and callbacks really well. You can connect things, disconnect them, pause callbacks, and start them again whenever you want.
-
 ## **How to Use**
 Example
 ```python
